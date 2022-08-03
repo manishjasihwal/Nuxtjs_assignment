@@ -1,0 +1,45 @@
+<table  id="list">
+  <tr>
+    <!-- <th class="px-4 border-black rounded-lg border-2">id</th> -->
+    <th class="px-4 border-blue-400 rounded-lg border-2">Name</th>
+    <th class="px-4 border-blue-400 rounded-lg border-2">Email</th>
+    <th class="px-4 border-blue-400 rounded-lg border-2">Mobile</th>
+
+    <th class="px-4 border-blue-400 rounded-lg border-2">Address</th>
+
+    <th class="px-4 border-blue-400 rounded-lg border-2">Action</th>
+  </tr>
+  <tr
+   v-for="item in userFound" :key="item"
+  >
+    <!-- <td class="px-4 border-black rounded-lg border-2">{{item.id=i+1}}</td> -->
+    <td class="px-4 border-blue-400 rounded-lg border-2">
+      {{ item.name }}
+    </td>
+
+    <td class="px-4 border-blue-400 rounded-lg border-2">
+      {{ item.email }}
+    </td>
+    <td class="px-4 border-blue-400 rounded-lg border-2">
+      {{ item.number }}
+    </td>
+    <td class="px-4 border-blue-400 rounded-lg border-2">
+      {{ item.address }}
+    </td>
+    <td class="px-4 border-blue-400 rounded-lg border-2">
+      {{ item.Action }}
+      <button
+        class="mx-3 rounded-lg bg-red-400 hover:bg-red-600 text-white w-20"
+        @click="userDelete(index)"
+      >
+        Delete
+      </button>
+      <button
+        class="mx-3 rounded-lg bg-green-400 hover:bg-green-600 text-white w-20"
+        @click="onEdit(index)"
+      >
+        Edit
+      </button>
+    </td>
+  </tr>
+</table>
